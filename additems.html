@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title> 
+  <link rel="stylesheet" href="registration.css">
+  <style>
+    select{
+      width: 300px;height: 40px;border-radius: 45px;background-color: white;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+      padding: 10px;margin-bottom: 25px;
+    }
+    select:hover{
+      background-color: #f5d6d6;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  <script src="registration.js"></script>
+  <script>
+
+  </script>
+</head>
+<body>
+  <div class="registration-form">
+    <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;"><font size="6">Add Food Items</font></h2>
+    <form action=" " method="post" id="forms">
+      <div class="form-group">
+        <br><select name="Category">
+        <option value=""selected disabled>Choose a Category</option>
+        <option value="noodles">Noodles</option>
+         
+        </select><br>
+      </div>
+      <div class="form-group">
+        
+        <input type="file" id="image" name="foodimg" placeholder="Insert an image" class="inputimg" required style="background-image: url('photos/gallery.png');" ><br>
+       
+      </div>
+      <div class="form-group">
+        <br>
+        <input type="text" id="name" name="name"  placeholder="Food Name" class="inputimg" required style="background-image: url('photos/salad.png');"><br>
+      </div>
+
+      <div class="form-group">
+        <br>
+        <input type="text" id="name" name="name"  placeholder="Price" class="inputimg" required style="background-image: url('photos/price-tag.png');"><br>
+      </div>
+
+      <div>
+        <br>
+      <a href="adminmain.html"><input type="button" value="Add Item" class="buttonstyle"></a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

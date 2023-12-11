@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view users</title>
+    <script>
+      $(function(){
+            $('#popup').click(function () {
+          $('#popupOverlay').fadeIn();
+      });
+  
+      $('#closePopupButton, #popupOverlay').click(function () {
+          $('#popupOverlay').fadeOut();
+      });
+  
+      // Prevent clicks inside the popup from closing it
+      $('#popupContent').click(function (event) {
+          event.stopPropagation();
+      });
+  
+
+     
+      function scrollLeft() {
+          var currentScrollLeft = $('#categorydiv').scrollLeft();
+          $('#categorydiv').scrollLeft(currentScrollLeft - 50);
+      }
+    $('#closePopupButton').click(scrollLeft);
+      // Load content from source.html into #targetElement
+      
+  })
+      
+
+    </script>
+</head>
+<style>
+
+</style>
+<body>
+  <div id="popupOverlay" class="overlay">
+    <div id="popupContent" class="popup" align="center" >
+        <span id="closePopupButton" class="close">&times;</span>
+        <!-- Content of your popup goes here -->
+        <font size="5" style="font-family: Ephesis;">User Status</font>
+        <p>Change User Status</p>
+        <button type="submit" style="height: 40px;width: 150px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Accept</button>
+        <button type="submit" style="height: 40px;width: 150px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Block</button>
+    </div>
+  </div>
+  <div>
+        <h5>Registered Users</h5>    
+        <table id="dashboardTable">
+        <tr>
+            <th>User Name</th>
+            <th>Register Date</th>
+            <th>Number Of Orders</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+          <td>Anu Abraham</td>
+          <td>2022-10-13</td>
+          <td>10</td>
+          <td id="popup">Accepted</td>
+        </tr>
+        <tr>
+          <td>John Doe</td>
+          <td>2023-01-23</td>
+          <td>5</td>
+          <td>Blocked</td>
+        </tr>
+  
+    </table>
+    </div>
+</body>
+</html>

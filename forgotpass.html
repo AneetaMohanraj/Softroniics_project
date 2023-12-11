@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+    body {
+      font-family: monospace;
+      color: #6d6b6b;
+      background-color: #f4f4f4;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .registration-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 40px;
+      box-sizing: border-box;
+    }
+
+    .buttonstyle {
+      background-color: #e6a6a6;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="registration-form">
+    <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;">Password Retrieval</h2>
+    <form action=" " method="post">
+      <label>Password is send to your email</label>
+      <div>
+        <input type="email" id="email" name="email" style="text-align: center;" placeholder="Enter your Email" required>
+      </div>
+      <br>
+      <div>
+      <a href=""><input type="button" value="Send" class="buttonstyle"></a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

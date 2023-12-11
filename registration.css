@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+body {
+  font-family: monospace;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.registration-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+input {
+  width: 350px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+input:hover{
+  background-color: #f5d6d6;
+  color: #000;
+  
+}
+
+.inputimg{
+  
+  background-position: 95%;
+  background-size: 8%;
+  background-repeat:no-repeat;
+  
+}
+
+.buttonstyle {
+  background-color: #e6a6a6;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  width: 300px;
+}
+
+button:hover {
+  background-color: #45a049;
+}

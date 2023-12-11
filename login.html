@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  <script src="login.js"></script>
+  
+  
+</head>
+<body>
+  <div id="changingcontent">
+  <div class="login-container">
+    <h2 style="color: #e6a6a6;font-family:Ephesis;font-size: 35px;">Restaurant Orders</h2>
+    <h2 style="color: #e6a6a6;font-family:Ephesis;font-size: 25px;">Login</h2>
+    <form class="login-form" action="login.php" method="post" id="forms">
+      <div class="form-group">
+        
+        <input type="text" id="username" name="username" placeholder="Enter your user name" style="background-image: url('photos/user\(1\).png');" required>
+      </div>
+      <div class="form-group">
+        
+        <input type="password" id="password" name="password" placeholder="Enter your password" style="background-image: url('photos/padlock.png');" required>
+      </div>
+      <div class="form-group">
+        <br><a href=""><input type="submit" value="Login" class="buttonstyle" name="loginbutton"></a>
+      </div>
+      <font style="font-family: ephesis;">---- OR ----</font>
+      <div class="form-group">
+        <br><a href="registration.html"><input type="button" value="Register" class="buttonstyle"></a>
+      </div>
+      <div class="form-group">
+        <a href="forgotpass.html" style="text-decoration: none;"><font style="color:#693c3c;font-family:monospace;font-size: 13px;color: #525050;">Forgot Password?</font></a>
+      </div>
+      <div class="form-group"><br>
+        <a href="adminmain.html" style="color: #e6a6a6;">admin</a>
+        <a href="customermain.html" style="color: #e6a6a6;">customer</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
