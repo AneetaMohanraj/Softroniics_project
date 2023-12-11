@@ -105,9 +105,10 @@ body {
 
   #insideContainerTotal{
     position: absolute;
-    bottom:0;
-    height: 200px;
+    bottom:0%;
+    height: 100px;
     width: 200px;
+    text-align: center;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
@@ -115,52 +116,34 @@ body {
     border-radius: 30px;
     background-color: #ecd1da;
   }
+
+
+
   #changecontent{
     background-color: #f4f4f4;
     position: relative;
     box-shadow: inset;
     padding: 20px;
     margin: 15px;
-    height: 420px;
+    height: 410px;
     width: 930px;
     overflow: auto;
     border-radius: 15px;
   }
-  #dashcontent{
-    display: flex;
-    flex-direction: row;
-  
-  }
-
-  .insidedashcontent{
-    height: 300px;
-    width: 250px;
-    background-color: #f4f4f4;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 20px;
-  }
-
-
-
-
 
 
   #contentbox{
-    display: inline-block;
-    height:130px;
-    width: 200px;
+    height:190px;
+    width: 930px;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 20px;
-    background-image: url('photos/credot3.jpg');
+    background-image: url('photos/back6.jpg');
+    background-position:38% 65%;
+    background-size: auto;
+    
     box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
     
-  }
-
-  .dashboardSpan{
-    display: flex;
-    flex-direction: row;
   }
 
   #dashboardTable{
@@ -172,11 +155,6 @@ body {
     border-radius: 15px;
     
   }
-
-  #dashboardTable tr{
-    background-color: #f3e6eb;
-  }
-
 
 
   #dashboardTable th{
@@ -201,20 +179,43 @@ body {
     background-color: white;
     position: relative;
   }
+  #categorydiv{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
 
+  #categorydiv div{
+    background-color: white;
+    border-radius: 15px;
+    height: 50px;
+    width: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    padding:20px;
+  }
 
+  #fooddiv{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+  }
 
-  .dashboardPicture{
-      height:190px;
-      width: 930px;
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 20px;
-      background-image: url('photos/back6.jpg');
-      background-position:38% 65%;
-      background-size: auto;
-      
-      box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  #fooddiv div{
+    background-color: white;
+    padding: 20px;
+    height: 150px;
+    width: 120px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
   }
 
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#deleteaccount').click(function () {
+          $('#popupOverlay').fadeIn();
+      });
+  
+      $('#closePopupButton, #popupOverlay').click(function () {
+          $('#popupOverlay').fadeOut();
+      });
+  
+      // Prevent clicks inside the popup from closing it
+      $('#popupContent').click(function (event) {
+          event.stopPropagation();
+      });
+  
+
+     
+      function scrollLeft() {
+          var currentScrollLeft = $('#categorydiv').scrollLeft();
+          $('#categorydiv').scrollLeft(currentScrollLeft - 50);
+      }
+    $('#closePopupButton').click(scrollLeft);
+      // Load content from source.html into #targetElement
+      
+  })
+      
+
+    </script>
+  
+    <style>
+    Table{
+    width: 900px;
+    height: 100px;
+    
+    border: none;
+    border-collapse: collapse;
+    border-radius: 15px;
+    
+  }
+
+
+ td{
+    border-spacing: 10px;
+    padding: 15px;
+  }
+  td label{
+    font-family:'Courier New', Courier, monospace;
+  }
+
+ tr:hover{
+    background-color: rgba(238, 142, 142, 0.315)
+  }
+  .settingsbutton{
+    width:200px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #fa6e9d;
+    color: white;
+  }
+
+    </style>
+</head>
+<body>
+
+    <div id="popupOverlay" class="overlay">
+        <div id="popupContent" class="popup"align="center" >
+            <span id="closePopupButton" class="close">&times;</span>
+            <!-- Content of your popup goes here -->
+            <font size="5" style="font-family: Ephesis;">Delete Account</font>
+            <p>If you delete your account all your surrent orders will get cancelled.<br>Are you sure you want to delete your account?</p>
+            <button type="submit" style="height: 40px;width: 200px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Yes, Delete the account</button>
+        </div>
+    </div>
+
+
+
+
+
+    <div>
+        <h5>Settings</h5>
+        <table style="width: 900px;padding: 10px;">
+            <tr>
+                <td><label for="changepass">Change password</label></td>
+                <td align="right"><a href="changepassword.html"><button class="settingsbutton" id="changepass">Change Password</button></a></td>
+            </tr>
+            <tr>
+                <td><label for="getpass">Forgot password</label></td>
+                <td align="right"><a href="forgotpass.html"><button class="settingsbutton" id="getpass">Get password to mail</button></a></td>
+            </tr>
+            <tr>
+                <td><label for="editprofile">Change contact details</label></td>
+                <td align="right"><a href="editprofile.html"><button class="settingsbutton" id="editprofile">Edit profile</button></a></td>
+            </tr>
+            <tr>
+                <td><label for="deleteaccount">Delete your account</label></td>
+                <td align="right"><button class="settingsbutton" id="deleteaccount" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Delete Account</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
