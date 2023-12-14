@@ -35,7 +35,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #f7f6f6;
+  color: #302f2f;
   font-family: Arial, sans-serif;
 }
 
@@ -70,3 +70,4 @@ body {
   background-color: #f58585;
   color: white;
 }
+
