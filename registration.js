@@ -51,10 +51,10 @@ $(function(){
             },
 
 
-        },
-        submitHandler: function(form) {
-            // If the form is valid, you can perform actions here, like AJAX submission
-            alert('form submitted')
-          }
+        }
+        // submitHandler: function(form) {
+        //     // If the form is valid, you can perform actions here, like AJAX submission
+        //     alert('form submitted')
+        //   }
     });
 })
