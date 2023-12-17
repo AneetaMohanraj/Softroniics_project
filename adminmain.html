@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="photos/appleicon.png">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script src="adminmain.js"> </script>
+  <link href="adminmain.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="dashboard">
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div style="text-align: center;"><img src="photos/appleicon.png" height="60px" width="60px"></div><br><br>
+      <div class="menu-item"><a href="admin_dashboard.html" style="text-decoration: none;">Dashboard</a></div>
+      <!-- <div class="menu-item"><a href="admin_viewUsers.html" style="text-decoration: none;">Users</a></div> -->
+      <div class="menu-item"><a href="admin_viewCategories.html" style="text-decoration: none;">Categories</a></div>
+      <div class="menu-item"><a href="admin_viewFood.html" style="text-decoration: none;">Food Items</a></div>
+      <div class="menu-item" ><a href="admin_viewFeedbacks.html" style="text-decoration: none;">Feedbacks</a></div>
+      <div class="menu-item" ><a href="changepassword.html" style="text-decoration: none;">Edit Password</a></div>
+      <div class="menu-item" ><a href="login.html" style="text-decoration: none;">Logout</a></div>
+      
+
+    </div>
+    <div id="maincontainer">
+
+      <h2>&nbsp;&nbsp;<button id="navhide" style="background-color: rgba(219, 218, 215, 0.164);border: rgba(219, 218, 215, 0.164);">
+        <img src="photos/navigationicon.png" width="15px" height="10px"></button>&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">Dashboard</font></h2>
+      <p>.</p>
+
+          <!-- dashboard panel -->
+
+
+
+          <span>
+            <div class="dashboardPicture">
+              <div style="text-align:left;padding-left: 30px;"><font size="7" style="font-family: Ephesis;color: rgb(248, 67, 103);"><br>Admin panel</font></div>
+            </div>
+            
+          </span>
+
+<!-- Dashboard content -->
+    <div id="changecontent" name="dashboard">
+   <h5> Main Events</h5>
+   <div id="dashcontent">
+
+   <div class="insidedashcontent">
+    <div style="background-color: rgb(241, 223, 223);padding: 10px;margin: 10px;border-radius: 15px;height: 280px;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);">
+    <h6>Today's Trendings</h6>
+    </div>
+   </div> 
+
+
+
+   <div class="insidedashcontent">
+    <div style="background-color: rgb(241, 223, 223);padding: 10px;margin-top: 10px;margin-bottom: 25px;border-radius: 15px;height: 100px;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);">
+    <h6>Total Users</h6>
+    </div>
+    <div style="background-color: rgb(241, 223, 223);padding: 10px;margin-top: 25px;margin-bottom: 10px;border-radius: 15px;height: 100px;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);">
+    <h6>New Users</h6>
+    </div>
+   </div> 
+
+
+
+   <div class="insidedashcontent">
+    <div style="background-color: rgb(241, 223, 223);padding: 10px;margin: 10px;border-radius: 15px;height: 160px;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);">
+      <h6>Total Income</h6>
+      </div>
+      <div style="background-color: rgb(241, 223, 223);padding: 10px;margin-top: 35px;border-radius: 15px;height: 80px;box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);">
+        <h6>Total Orders</h6>
+        </div>
+   </div> 
+
+
+
+   </div>
+   
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    </div>
+
+  
+    
+
+    <div id="sidecontainer">
+      <div id="insideside" style="text-align: center;"><font size="10" style="font-family: Ephesis;">orders</font> <br><br>
+        <div style="overflow: auto;">
+        <table align="center" id="insideContainerTable">
+          <tr>
+              <th>Food items</th>
+              <th>Quantity</th>
+          </tr>
+          <tr>
+            <td>Pizza</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>Burger</td>
+            <td>3</td>
+          </tr>
+    
+      </table>
+    </div>
+
+      
+        <div id="insideContainerTotal"><font size="6px" style="font-family: Ephesis;color: rgb(238, 51, 82);"> total orders </font></div>
+      
+    </div>
+
+
+
+  </div>
+
+  
+
+</body>
+</html>

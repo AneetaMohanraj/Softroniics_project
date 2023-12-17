@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedbacks</title>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $.ajax({
+        url:'admin_viewFeedbacks.php',
+        dataType:'json',
+        success:function(response){
+
+        },
+        error:function(xhr,status,error){
+          alert("error - "+status+" - "+error)
+        }
+      })
+    })
+  </script>
+
+</head>
+<body>
+    <h5>Feedbacks from users</h5>    
+    <table id="dashboardTable">
+    <tr>
+        <th>User Name</th>
+        <th>Feedback Date</th>
+        <th>Feedback</th>
+        <th>Reply</th>
+    </tr>
+    <tr>
+      <td>Anu Abraham</td>
+      <td>2022-10-13</td>
+      <td>Good Food in best price.</td>
+      <td>Thank you for your Feedback.</td>
+    </tr>
+
+</table>
+</body>
+</html>
