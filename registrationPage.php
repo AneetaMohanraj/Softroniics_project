@@ -1,3 +1,8 @@
+<?php
+include 'registration.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +14,38 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
   <script src="registration.js"></script>
   <script>
+    $(function(){
+      $('#username').on('change',function(){
+        let value = $(this).val();
+        console.log(value);
+
+        $.ajax({
+          url:'registration.php',
+          type:'post',
+          data:{
+            'username':value
+          },
+          dataType:'json',
+          success:function(response){
+              if(response.exists){
+                alert("username already exists");
+              }
+          },
+          error:function(){
+            alert("error : "+status+" "+error)
+          }
+        })
+      })
+    })
+  </script>
+  <script>
 
   </script>
 </head>
 <body>
   <div class="registration-form">
     <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;"><font size="6">User Registration</font></h2>
-    <form action=" " method="post" id="forms">
+    <form action="registration.php" method="post" id="forms">
       <div class="form-group">
         
         <input type="text" id="name" name="name" placeholder="Enter your Name" class="inputimg" style="background-image: url('photos/user\(1\).png');" required><br>
@@ -41,7 +71,7 @@
       </div>
       <div>
         <br>
-      <a href="customermain.html"><input type="submit" value="Register" class="buttonstyle"></a>
+      <a href="customermain.html"><input name="submit" type="submit" value="Register" class="buttonstyle"></a>
       </div>
     </form>
   </div>

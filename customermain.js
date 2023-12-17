@@ -74,7 +74,4 @@ $('#closePopupButton').click(scrollLeft);
 
 
 
-
-
-      
   })

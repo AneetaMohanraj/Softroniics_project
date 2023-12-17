@@ -115,6 +115,7 @@ body {
     border-radius: 30px;
     background-color: #ecd1da;
   }
+
   #changecontent{
     background-color: #f4f4f4;
     position: relative;
@@ -172,6 +173,9 @@ body {
     border-radius: 15px;
     
   }
+  #dashboardTable tr{
+    background-color: #f3e6eb;
+  }
 
   #dashboardTable tr{
     background-color: #f3e6eb;
@@ -193,7 +197,7 @@ body {
   }
 
   #dashboardTable tr:hover{
-    background-color: rgba(238, 142, 142, 0.315)
+    background-color: rgba(238, 142, 142, 0.315)!important
   }
 
 
