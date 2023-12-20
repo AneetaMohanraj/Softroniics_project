@@ -25,12 +25,19 @@ include 'getCategory.php';
 
   <script>
     $(function(){
+      var original = $('#fooddiv').html();
+      // console.log(original);
+
+      $('.popularcategory').on('click',function(){
+        $('#fooddiv').html(original)
+      })
+
       $('.categoryselect').on('click',function(){
-         let cid = $(this).attr('data-id');
+         let cid = $(this).attr('id');
          console.log(cid);
 
          $.ajax({
-          url:'getFood.php',
+          url:'customer_ShowFood.php',
           type:'post',
           data:{
             'id':cid
@@ -45,14 +52,13 @@ include 'getCategory.php';
 
     // Create HTML content for each food item
                   htmlContent += '<div>';
-                  htmlContent += '<img src="photos/' + foodItem.food_image + '" height="70px" width="70px">';
-                  htmlContent += '<br><font size="2">' + foodItem.food_name + '<br>Rs.' + foodItem.food_price + '</font><br><br>';
+                  htmlContent += '<img src="photos/' + foodItem.img + '" height="70px" width="70px">';
+                  htmlContent += '<br><font size="2">' + foodItem.foodname + '<br>Rs.' + foodItem.price + '</font><br><br>';
                   htmlContent += '<input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;">';
                   htmlContent += '</div>';
              }
              $('#fooddiv').html(htmlContent);
 // Set the HTML content to the insideContainerTotal
-
 
           },
           error:function(xhr,status,error){
@@ -73,8 +79,8 @@ include 'getCategory.php';
 
     <div id="sidebar">
       <div style="text-align: center;"><img src="photos/appleicon.png" height="60px" width="60px"></div><br><br>
-      <div class="menu-item"><a href="customerdash.php" style="text-decoration: none;">Dashboard</a></div>
-      <div class="menu-item"><a href="feedbacks.html" style="text-decoration: none;">Reviews</a></div>
+      <div class="menu-item"><a href="customer_Dashboard.php" style="text-decoration: none;">Dashboard</a></div>
+      <div class="menu-item"><a href="customer_ViewFeedbacks.html" style="text-decoration: none;">Reviews</a></div>
       
       <div class="menu-item" ><a href="customer_Settings.html" style="text-decoration: none;">Settings</a></div>
       <div class="menu-item" ><a href="login.html" style="text-decoration: none;">Logout</a></div>
@@ -104,8 +110,10 @@ include 'getCategory.php';
 <!-- CATEGORY SECTION -->
 
       <span id="categorydiv">
+      <div class="popularcategory"><img src="photos/appleicon.png" height="30px" width="30px"><br><font size="1">Popular</font></div>
+
         <?php while($row = $data->fetch_assoc()){ ?>
-        <div class="categoryselect" data-id="<?php echo $row['pk_int_category_id']; ?>"><img src="photos/<?php echo $row['vchr_category_image']; ?>" height="30px" width="30px"><br><font size="1"><?php echo $row['vchr_category']; ?></font></div>
+        <div class="categoryselect" id="<?php echo $row['pk_int_category_id']; ?>"><img src="photos/<?php echo $row['vchr_category_image']; ?>" height="30px" width="30px"><br><font size="1"><?php echo $row['vchr_category']; ?></font></div>
 
         <?php } ?>
 <!-- 
@@ -126,7 +134,7 @@ include 'getCategory.php';
 <!-- FOOD ITEMS LIST SECTION -->
 
       <span id="fooddiv">
-        <div><img src="photos/appleicon.png" height="70px" width="70px" >
+        <div id="popularfood"><img src="photos/appleicon.png" height="70px" width="70px" >
           <br><font size="2">Cheese Burger<br>Rs.35</font><br><br>
           <input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;">
 

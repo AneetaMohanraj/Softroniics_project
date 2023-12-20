@@ -3,22 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Reply</title>
+    <title>Order Food</title>
     <link rel="icon" type="image/x-icon" href="photos/appleicon.png">
     <link rel="stylesheet" href="registration.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-  $(function(){
-    $.ajax({
-        url:'admin_FeedbackReply.php',
-        dataType:'json',
-        success:function(response){
-            $('#feedback').html(response.feedback);
-        }
-    })
-  })
-  </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="registration-form">
@@ -26,7 +16,7 @@
         <form action=" " method="post" id="feedbackss">
          
 
-          <label id="feedback"></label>
+          <label class="foodid" id=""></label>
           <div>
             <input type="text" id="reply" name="reply" style="text-align: center;" placeholder="Enter your reply" required>
           </div>

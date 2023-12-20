@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+   $(function(){
+    $.ajax({
+        url:'customer_ViewFeedbacks.php',
+        dataType:'json',
+        success:function(response){
+            let tr = ''
+            for(i=0;i<response.length;i++){
+                tr += '<tr>'
+                tr += '<td>'+response[i].user+'</td>'
+                tr += '<td>'+response[i].feedback+'</td>'
+                tr += '<td>'+response[i].reply+'</td>'
+                tr += '<td>'+response[i].date+'</td>'
+                tr += '</tr>'
+            }
+            $('#dashboardTable').append(tr)
+        },
+        error:function(xhr,status,error){
+            alert("error : "+status+" - "+error)
+        }
+    })
+   })
+  </script>
+</head>
+<body>
+    <h5>Categories&nbsp;&nbsp; &nbsp; &nbsp;  <a href="customer_addFeedback.html"><button style="background-color: #e6a6a6;width:200px;height: 30px;color: white;border-radius: 30px;">Give a Feedback</button> </a>     </h5>  
+  
+    <table id="dashboardTable">
+    <tr> 
+        <th>User</th>
+        <th>Feedbacks</th>
+        <th>Reply</th>
+        <th>Date</th>
+    </tr>
+
+</body>
+</html>

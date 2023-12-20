@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>.orders{text-decoration: none;color: black;}</style>
+
+    <!-- AJAX REQUEST TO GET THE FOOD DETAILS -->
+    <script>
+        $(function(){
+            $.ajax({
+                url:'admin_ViewOrders.php',
+                dataType:'json',
+                success:function(response){
+                    let tr = ''
+                    for(i=0;i<response.length;i++){
+                        tr += '<tr>'
+                        if(response[i].count>1){
+                            tr += '<td rowspan="'+response[i].count+'">'+response[i].username+'</td>'
+                        }
+                        tr += '<td>'+response[i].Food+'</td>'
+                        tr += '<td>'+response[i].Quantity+'</td>'
+                        tr += '<td>'+response[i].TotalAmount+'</td>'
+                        if(response[i].count>1){
+                            tr += '<td rowspan="'+response[i].count+'"><a class="orders" href="admin_UpdateSelectStatus.php?id='+response[i].orderid+'">'+response[i].Status+'</a></td>'
+                        }
+                        tr += '</tr>'
+                        
+                    }
+                    $('#dashboardTable').append(tr)
+                },
+                error:function(xhr,status,error){
+                   alert("error : "+status+" - "+error)
+                }
+            })
+        })
+
+        
+
+    
+    </script>
+
+</head>
+<body>
+    <h5>Food Items &nbsp;&nbsp; &nbsp; &nbsp;<a href="admin_additems.php"><button style="background-color: #e6a6a6;width:200px;height: 30px;color: white;border-radius: 30px;">Add items</button></a>  </h5>
+    <table id="dashboardTable">
+    <tr>
+        <th>User Name</th>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Total amount</th>
+        <th>Status</th>
+        
+    </tr>
+
+
+    </tr>
+
+</table>
+</html>

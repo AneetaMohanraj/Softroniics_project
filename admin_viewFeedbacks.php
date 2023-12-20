@@ -5,11 +5,6 @@ class Feedback{
     private $db;
 
     public function __construct(Database $db){
-<<<<<<< HEAD
-        // $this->db->getConnection()->prepare("SELECT ")
-    }
-}
-=======
         $this->db = $db;
     }
 
@@ -32,5 +27,4 @@ while($row = $data->fetch_assoc()){
     array_push($arr,$x);
 }
 echo json_encode($arr);
->>>>>>> 136f601 (commiit all)
 ?>

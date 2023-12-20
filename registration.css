@@ -62,6 +62,7 @@ input:hover{
   width: 300px;
 }
 
-button:hover {
-  background-color: #45a049;
+.buttonstyle:hover {
+  background-color: #eb8f8f;
+  color: #000;
 }

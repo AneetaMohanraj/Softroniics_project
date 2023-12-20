@@ -8,13 +8,18 @@ include 'getCategory.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="customer_Dashboard.js"></script>
 </head>
 <body>
     <div name="dashboard">
         <h5>Current Trends</h5>   
     <span id="categorydiv">
+    <div class="popularcategory"><img src="photos/appleicon.png" height="30px" width="30px"><br><font size="1">Popular</font></div>
     <?php while($row = $data->fetch_assoc()){ ?>
-        <div class="categoryselect" data-id="<?php echo $row['pk_int_category_id']; ?>"><img src="photos/<?php echo $row['vchr_category_image']; ?>" height="30px" width="30px"><br><font size="1"><?php echo $row['vchr_category']; ?></font></div>
+        <div class="categoryselect" id="<?php echo $row['pk_int_category_id']; ?>"><img src="photos/<?php echo $row['vchr_category_image']; ?>" height="30px" width="30px"><br><font size="1"><?php echo $row['vchr_category']; ?></font></div>
 
         <?php } ?>
 

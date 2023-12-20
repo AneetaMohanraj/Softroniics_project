@@ -22,7 +22,7 @@ $arr = array();
 $data = $view->viewCategory();
 
 while($row = $data->fetch_assoc()){
-    $x = array('categoryimg'=>$row['vchr_category_image'],'category'=>$row['vchr_category']);
+    $x = array('categoryimg'=>$row['vchr_category_image'],'category'=>$row['vchr_category'],'categoryid'=>$row['pk_int_category_id']);
     array_push($arr,$x);
 }
 echo  json_encode($arr);

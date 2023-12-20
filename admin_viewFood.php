@@ -21,7 +21,7 @@ $data = $viewfood->viewFood();
 $arr = array();
 
 while($row = $data->fetch_assoc()){
-    $x = array('category'=>$row['vchr_category'],'foodimage'=>$row['vchr_image'],'foodname'=>$row['vchr_food_name'],'price'=>$row['int_price']);
+    $x = array('foodid'=>$row['pk_int_food_id'],'category'=>$row['vchr_category'],'foodimage'=>$row['vchr_image'],'foodname'=>$row['vchr_food_name'],'price'=>$row['int_price']);
     array_push($arr,$x);
 }
  echo json_encode($arr);
