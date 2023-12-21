@@ -62,7 +62,12 @@ input:hover{
   width: 300px;
 }
 
+<<<<<<< HEAD
 .buttonstyle:hover {
   background-color: #eb8f8f;
   color: #000;
+=======
+button:hover {
+  background-color: #45a049;
+>>>>>>> 8768c7b541a7701ee2ed764a03f65f4e7e8b6676
 }

@@ -1,5 +1,6 @@
 <?php
 include 'database_connection.php';
+<<<<<<< HEAD
 
 $user = $_POST['username'];
 
@@ -48,3 +49,12 @@ if(isset($_POST['submit'])){
     $register->registration($name,$email,$username,$password);
 }
 ?>
+=======
+if(isset($_POST['loginbutton'])){
+    $name = $_POST['username'];
+    $email = $_POST['password'];
+    $type = "customer";
+    mysqli_query($con,"insert into login(username,password,type) values('$name','$email','$type')");
+}
+?>
+>>>>>>> 8768c7b541a7701ee2ed764a03f65f4e7e8b6676

@@ -13,11 +13,12 @@ $(function(){
       if(val === 'login.html'){
         window.location.href='login.html';
       }
+
       if(val === 'changepassword.html'){
         window.location.href='changepassword.html';
       }
 
     })
 
-      
+
   })

@@ -57,4 +57,8 @@ $(function(){
         //     alert('form submitted')
         //   }
     });
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> 8768c7b541a7701ee2ed764a03f65f4e7e8b6676

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard</title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+  <script src="customermain.js"> </script>
+  <link href="customermain.css" rel="stylesheet">
+</head>
+<body>
+
+  <div id="dashboard">
+
+<!-- SIDE NAVIGATION BAR SECTION -->
+
+    <div id="sidebar">
+      <div style="text-align: center;"><img src="photos/appleicon.png" height="60px" width="60px"></div><br><br>
+      <div class="menu-item"><a href="customerdash.html" style="text-decoration: none;">Dashboard</a></div>
+      <div class="menu-item"><a href="feedbacks.html" style="text-decoration: none;">Reviews</a></div>
+      
+      <div class="menu-item" ><a href="settings.html" style="text-decoration: none;">Settings</a></div>
+      <div class="menu-item" ><a href="login.html" style="text-decoration: none;">Logout</a></div>
+      
+
+    </div>
+    <div id="maincontainer">
+
+      <h2>&nbsp;&nbsp;<button id="navhide" style="background-color: rgba(219, 218, 215, 0.164);border: rgba(219, 218, 215, 0.164);">
+        <img src="photos/navigationicon.png" width="15px" height="10px"></button>&nbsp;&nbsp;&nbsp;&nbsp;<font size="3">Dashboard</font></h2>
+      <p></p>
+
+<!-- MAIN HEADER IMAGE SECTION -->
+
+
+    <span>&nbsp;&nbsp;
+      <div id="contentbox">
+        <div style="text-align:left;padding-left: 30px;"><font size="7" style="font-family: Ephesis;color: rgb(248, 67, 103);">Welcome<br>Have a Happy Meal</font></div>
+      </div>
+      
+    </span>
+
+    <div id="changecontent" name="dashboard">
+      <h5>Current Trends</h5>   
+      
+      
+<!-- CATEGORY SECTION -->
+
+      <span id="categorydiv">
+        <div data-id=""><img src="photos/appleicon.png" height="30px" width="30px"><br><font size="1"></font></div>
+
+        <div ><img src="photos/appleicon.png" height="30px" width="30px"><br><font size="1">Popular</font></div>
+        <div ><img src="photos/drinks.png" height="30px" width="30px"><br><font size="1">Drinks</font></div>
+        <div ><img src="photos/pizza.png" height="30px" width="30px"><br><font size="1">Pizza</font></div>
+        <div ><img src="photos/burger.png" height="30px" width="30px"><br><font size="1">Burgers</font></div>
+        <div ><img src="photos/fries.png" height="30px" width="30px"><br><font size="1">Fries</font></div>
+        <div ><img src="photos/deserts.png" height="30px" width="30px"><br><font size="1">Deserts</font></div>
+        <div ><img src="photos/cakes.png" height="30px" width="30px"><br><font size="1">Cakes</font></div>
+        <div ><img src="photos/noodles.png" height="30px" width="30px"><br><font size="1">Noodles</font></div>
+
+
+
+
+      </span>
+
+<!-- FOOD ITEMS LIST SECTION -->
+
+      <span id="fooddiv">
+        <div><img src="photos/appleicon.png" height="70px" width="70px" >
+          <br><font size="2">Cheese Burger<br><del>Rs.40</del>&nbsp;&nbsp;Rs.35</font><br><br>
+          <input id="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;">
+
+        </div>
+      </span>
+    </div>
+    </div>
+
+
+<!-- POP UP ORDER QUANTITY SECTION -->
+
+    <div id="popupOverlay" class="overlay">
+      <div id="popupContent" class="popup"align="center" >
+          <span id="closePopupButton" class="close">&times;</span>
+          <!-- Content of your popup goes here -->
+          <font size="5" style="font-family: Ephesis;">Orders</font>
+          <p><input type="text" placeholder="Enter Quantity" name="quantity" style="height: 30px;text-align: center;padding: 10px;border-radius: 30px;"></p>
+          <button type="submit" style="height: 40px;width: 100px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Order</button>
+      </div>
+  </div>
+
+<!-- SIDE CONTAINER ORDER HISTORY SECTION -->
+
+
+<div id="popupOverlayOrder" class="overlay">
+  <div id="popupContentOrder" class="popup"align="center" >
+      <span id="closePopupButton" class="close">&times;</span>
+      <!-- Content of your popup goes here -->
+      <font size="5" style="font-family: Ephesis;">Order Updates</font>
+      <p>Do you want to cancel this order?</p>
+      <button type="submit" style="height: 40px;width: 150px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Cancel</button>
+  </div>
+</div>
+
+    <div id="sidecontainer">
+      <div id="insideside" style="text-align: center;"><font size="6" style="font-family: Ephesis;">My Orders</font> <br><br>
+        <div style="overflow: auto;">
+        <table align="center" id="insideContainerTable">
+          <tr data-href="editprofile.html">
+            <td><img src="photos/pizza.png" height="20px" height="20px"></td>
+            <td align="left">Pizza<br>x4</td>
+            <td>300Rs/-</td>
+          </tr>
+          <tr>
+            <td><img src="photos/burger.png" height="20px" height="20px"></td>
+            <td align="left">burger<br>x3</td>
+            <td>250Rs/-</td>
+          </tr>
+    
+      </table>
+    </div>
+
+    <div id="insideContainerTotal"><font size="6px" style="font-family: Ephesis;color: rgb(238, 51, 82);"> total orders </font></div>
+    
+       
+      
+    </div>
+    
+
+
+
+  </div>
+
+  
+
+</body>
+</html>

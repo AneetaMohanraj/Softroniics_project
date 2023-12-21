@@ -76,6 +76,7 @@ $('#closePopupButton').click(scrollLeft);
 
 
 
+
 $(function(){
   var original = $('#fooddiv').html();
   // console.log(original);
@@ -120,10 +121,5 @@ $(function(){
      })
   })
 })
+})
 
-
-
-
-
-
-  })
