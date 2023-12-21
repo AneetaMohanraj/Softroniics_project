@@ -1,5 +1,11 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include 'database_connection.php';
+
+
+
 
 class Feedbacks{
     private $db;
@@ -25,4 +31,5 @@ while($row = $data->fetch_assoc()){
     array_push($arr,$x);
 }
 echo json_encode($arr);
+
 ?>

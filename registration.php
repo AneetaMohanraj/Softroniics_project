@@ -29,7 +29,7 @@ class Registration{
         $st = $this->db->getConnection()->prepare("INSERT INTO tbl_register(vchr_user_name,vchr_password,vchr_name,vchr_email,vchr_type) VALUES(?,?,?,?,?)");
         $st->bind_param("sssss",$username,$password,$name,$email,$type);
         $st->execute();
-        header("location:customermain.html");
+        header("location:customermain.php");
     }
 }
 

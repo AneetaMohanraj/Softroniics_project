@@ -2,6 +2,7 @@
 
 <?php
 include 'getCategory.php';
+session_start();
 ?>
 
 <!-- CUSTOMER HOME PAGE  -->
@@ -44,9 +45,9 @@ include 'getCategory.php';
           },
           dataType:'json',
           success:function(response){
-            let htmlContent = '';  // Initialize an empty string to store HTML content
+            let htmlContent = '';  // Initialize an empty string to store HTML content foodItem.foodid class="fooddivButton"
 
-// Loop through each food item in the response
+// Loop through each food item in the response //  background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;
             for (let i = 0; i < response.length; i++) {
                   let foodItem = response[i];
 
@@ -54,7 +55,7 @@ include 'getCategory.php';
                   htmlContent += '<div>';
                   htmlContent += '<img src="photos/' + foodItem.img + '" height="70px" width="70px">';
                   htmlContent += '<br><font size="2">' + foodItem.foodname + '<br>Rs.' + foodItem.price + '</font><br><br>';
-                  htmlContent += '<input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;">';
+                  htmlContent += '<a href="customer_OrderView.php?id='+foodItem.foodid+'"><input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;"></a>';
                   htmlContent += '</div>';
              }
              $('#fooddiv').html(htmlContent);
@@ -65,6 +66,11 @@ include 'getCategory.php';
             alert("error : "+status+" "+error)
           }
          })
+      })
+
+      $('#fooddivButton').on('click',function(){
+        let id = $(this).attr('id')
+        console.log(id);
       })
     })
   </script>
@@ -83,7 +89,7 @@ include 'getCategory.php';
       <div class="menu-item"><a href="customer_ViewFeedbacks.html" style="text-decoration: none;">Reviews</a></div>
       
       <div class="menu-item" ><a href="customer_Settings.html" style="text-decoration: none;">Settings</a></div>
-      <div class="menu-item" ><a href="login.html" style="text-decoration: none;">Logout</a></div>
+      <div class="menu-item" ><a href="logout.php" style="text-decoration: none;">Logout</a></div>
       
 
     </div>
@@ -134,9 +140,9 @@ include 'getCategory.php';
 <!-- FOOD ITEMS LIST SECTION -->
 
       <span id="fooddiv">
-        <div id="popularfood"><img src="photos/appleicon.png" height="70px" width="70px" >
-          <br><font size="2">Cheese Burger<br>Rs.35</font><br><br>
-          <input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;">
+        <div id="popularfood"><img src="photos/pavbhaji.png" height="70px" width="70px" >
+          <br><font size="2">Pav Bhaji<br>Rs.20</font><br><br>
+          <a href="customer_OrderView.html"><input class="fooddivButton" type="button" value="Order" style="background-color: #ec8b8b;padding: 10px;color: white;height: 30px;width: 90px;border-radius: 30px;"></a>
 
         </div>
       </span>
@@ -144,17 +150,6 @@ include 'getCategory.php';
     </div>
 
 
-<!-- POP UP ORDER QUANTITY SECTION -->
-
-    <div id="popupOverlay" class="overlay">
-      <div id="popupContent" class="popup"align="center" >
-          <span id="closePopupButton" class="close">&times;</span>
-          <!-- Content of your popup goes here -->
-          <font size="5" style="font-family: Ephesis;">Orders</font>
-          <p><input type="text" placeholder="Enter Quantity" name="quantity" style="height: 30px;text-align: center;padding: 10px;border-radius: 30px;"></p>
-          <button type="submit" style="height: 40px;width: 100px;background-color: #ec8b8b;color: white;padding: 10px;border-radius: 30px;">Order</button>
-      </div>
-  </div>
 
 <!-- SIDE CONTAINER ORDER HISTORY SECTION -->
 

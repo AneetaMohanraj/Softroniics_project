@@ -36,6 +36,19 @@ include 'registration.php';
           }
         })
       })
+
+      // $('#forms').submit(function(){
+      //   let name = $('#name').val()
+      //   console.log(name);
+      //   let email = $('#email').val()
+      //   console.log(email);
+      //   let username = $('#username').val()
+      //   console.log(username);
+      //   let password = $('#password').val()
+      //   console.log(password);
+
+
+      // })
     })
   </script>
   <script>
@@ -45,7 +58,7 @@ include 'registration.php';
 <body>
   <div class="registration-form">
     <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;"><font size="6">User Registration</font></h2>
-    <form action="registration.php" method="post" id="forms">
+    <form action="" method="post" id="forms">
       <div class="form-group">
         
         <input type="text" id="name" name="name" placeholder="Enter your Name" class="inputimg" style="background-image: url('photos/user\(1\).png');" required><br>
@@ -71,7 +84,7 @@ include 'registration.php';
       </div>
       <div>
         <br>
-      <a href="customermain.html"><input name="submit" type="submit" value="Register" class="buttonstyle"></a>
+      <a href=""><input name="submit" type="submit" value="Register" class="buttonstyle"></a>
       </div>
     </form>
   </div>

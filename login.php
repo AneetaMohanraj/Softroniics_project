@@ -1,6 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'database_connection.php';
-include 'session.php';
+
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -17,11 +21,11 @@ class Login{
         $st->bind_param("ss",$username,$password);
         $st->execute();
         $result = $st->get_result();
+        $row = $result->fetch_assoc();
         if($result->num_rows === 0){
             echo json_encode(array("notexists" => true));
         }
         else{
-            $row = $result->fetch_assoc();
             if($row['vchr_type'] === "admin"){
                 echo json_encode(array('usertype' => 'admin'));
             }
@@ -29,15 +33,17 @@ class Login{
                 echo json_encode(array('usertype' => 'customer'));
             }
             
-            
+            $userid = $row['pk_int_id'];
+            session_start();
+            $_SESSION['user'] = $userid;
         }
     }
 }
 
 $db = new Database();
 $login = new Login($db);
-$session = new SessionManager();
   
 $login->login($username,$password);
+
 
 ?>

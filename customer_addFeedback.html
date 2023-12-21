@@ -15,19 +15,19 @@
              console.log(feed);
 
 
-            //  $.ajax({
-            //     url:'customer_addFeedback.php',
-            //     type:'post',
-            //     data:{
-            //         'feedback':feed
-            //     },
-            //     success:function(){
-            //         alert("Feedback send");
-            //     },
-            //     error:function(xhr,status,error){
-            //         alert("Error : "+status+" - "+error)
-            //     }
-            // })
+             $.ajax({
+                url:'customer_addFeedback.php',
+                type:'post',
+                data:{
+                    'feedback':feed
+                },
+                success:function(){
+                    alert("Feedback send");
+                },
+                error:function(xhr,status,error){
+                    alert("Error : "+status+" - "+error)
+                }
+            })
           })
         })
     </script>
