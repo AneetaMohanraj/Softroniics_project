@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csv handling</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#csv').on('click',function(){
+                $.ajax({
+                    url:'csv.php',
+                    success:function(){
+                        alert("downloaded")
+                    },
+                    error:function(xhr,status,error){
+                        alert("error - "+status+" - "+error)
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    download table <br>
+    <button id="csv">download</button>
+</body>
+</html>
