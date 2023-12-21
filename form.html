@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Menu Poster</title>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script >
+
+        $(function(){
+            $('.hide1').hide();
+            $('.hide2').hide();
+            $('.show1').on('click',function(){
+                $('.hide1').show();
+                $('.hide2').hide();
+            })
+            $('.show2').on('click',function(){
+                $('.hide2').show();
+                $('.hide1').hide();
+            })
+        })
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Inconsolata&family=Roboto+Mono:wght@200&display=swap');
+        .main{
+            text-align: center;
+            align-content: center;
+            width: 50%;
+        }
+        .menuflexed{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-items: baseline;
+            }
+        font{
+            color: whitesmoke;
+            font-family: Inconsolata;
+        }
+        .halflex{
+            display: flex;
+            width:100%;
+            justify-content: space-between;
+            
+        }
+    </style>
+</html>
+<body style="background-color: rgb(52, 155, 114); align-content:center;" >
+<div class="main">  
+    <div class="menuflexed" >
+        <span style="text-align:center;" ><font size="2" class="fontcolor">LUNCH<br>AND DINNER</font></span>
+        <span><font size="10" style="font-family:'Times New Roman', Times, serif">MENU</font></span>
+        <span style="text-align:center;""><font size="2">SERVED<br>FROM 12-8 PM</font></span>
+    </div>
+    <br>
+    <div style="border-top: 2px solid whitesmoke;padding-top: 10px;border-bottom: 2px solid whitesmoke;padding-bottom: 10px;">
+        <span style="text-align: center;"><font size="5" style="font-family:Roboto Slab">Entree</font></span> 
+    </div>
+    <div class="halflex">
+        <span style="text-align: left;"><br><font class="show1"><b>BREAD BASKET</b></font><br><font style="color:rgb(222, 220, 220);"  class="hide1">Selection of freshly baked rolls</font>
+        <br><br><font  class="show2"><b>GARLIC AND CHEESE BREAD</b></font>
+        <br><font style="color:rgb(222, 220, 220);"class="hide2">Corn chips topped w/black beans,melted cheese,salsa & fresh guacamole</font></span>
+
+        <span><br><font>$8.9<br><br><br>$10.9</font></span>
+        <span style="text-align: left;"><br><font><b>BREAD BASKET</b></font><br><font style="color:rgb(222, 220, 220);">Selection of freshly baked rolls</font>
+            <br><br><font><b>GARLIC AND CHEESE BREAD</b></font>
+            <br><font style="color:rgb(222, 220, 220);">Corn chips topped w/black beans,melted cheese,salsa & fresh guacamole</font></span>  
+    </div>
+</div> s
+</div>
+</body>

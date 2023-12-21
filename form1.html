@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            $(function(){
+                    $('.divtag').hide();
+                    $('.btn1').on('click',function(){
+                    $('#head').fadeOut(1000).fadeIn(1000).css({color:'red'});
+                    var value=$('.btn1').attr('divid');                             //get new attribute value
+                    $('.divtag').hide();
+                    $('#'+value).show();
+
+                });
+            
+            $('.btn2').on('click',function(){
+                var value=$('.btn2').attr('divid')
+                $('.divtag').hide();
+                $('#'+value).show();
+            })   
+                
+            $('.input').on('focus',function(){
+                $('.input').css({'background-color':'blue'});
+            }); 
+            $('.input').on('blur',function(){
+                $(this).css({'background-color': 'yellow'});
+            });
+            });
+
+        </script>
+    </head>
+    <body>
+    <div>    
+        <h1 id="head">JQuery Selectors</h1>
+        <input type="button" value="click me" class="btn1" divid="item1"><br><br>
+        <input type="button" value="click me" class="btn2" divid="item2"><br>
+        <div class="divtag" id="item1">
+            <br>this is inside a div tag - 1.
+        </div>
+        <div class="divtag" id="item2">
+            <br>this is inside a div tag - 2.
+        </div>
+        <br><input type="text" name="name" placeholder="Enter the first name" class="input">
+    </div>    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

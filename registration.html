@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .input{
+            width:450px;
+            height:40px;
+            border-radius: 15px;
+            border-color:#d8d8d8;
+        }
+        #text{
+            background-color:blue;
+            color:red;
+        }
+
+        label{
+            font-size: 18px;
+            font-family:monospace ;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <form action="" method="" enctype="">
+        <h1 align="center" style="font-family:Agbalumo;color:firebrick;box-shadow: 40px;">Student Registration Form<h1></h1>
+        <table width="900px" style="padding:30px;border-spacing:30px;" align="center">
+            <tr>
+                <td><label for="name">First Name</label></td>
+                <td><input type="text" name="firstname" id="text" class="input"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Last Name</label></td>
+                <td><input type="text" name="lastname" id="name" class="input"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input type="email" name="email" id="email" class="input"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender</label></td>
+                <td><input type="radio" name="gender" value="male" style=""> Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="female" style=""> Female</td>
+            </tr>
+            <tr>
+                <td><label for="subjects">Choose Subjects</label></td>
+                <td><input type="checkbox" name="oop" value="oop">OOP&nbsp;&nbsp;&nbsp;<input type="checkbox" name="db" value="database">DataBase&nbsp;&nbsp;&nbsp;<input type="checkbox" name="web" value="web technologies">Web technologies
+                    &nbsp;&nbsp;&nbsp;  <input type="checkbox" name="android" value="android dev" >Android Dev</td>
+            </tr>
+            <tr>
+                <td><label for="comments">Comments</label></td>
+                <td><textarea placeholder="Description goes here" style="height: 200px;width: 400px;border-radius: 15px; padding: 10px;"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="city">City</label></td>
+                <td><select name="city" style="width:350px;height: 40px;border-radius: 15px;padding: 10px;">
+                    <option>Kozhikode</option>
+                    <option>Delhi</option Selected>
+                    <option>Chennai</option>
+                    <option>Kochi</option>
+                    <option>Bangalore</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="reset" value="Reset" style="width :250px;height: 40px;border-radius: 30px;border-color: white;"> 
+                   &nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" value="Submit" style="width :250px;height: 40px;border-radius: 30px;border-color: white;background-color: brown;"> </td>
+            </tr>
+</body>
+</html>
