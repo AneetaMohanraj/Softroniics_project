@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>ajax get</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+           $(function(){
+            $('.btn').on('click',function(){
+                $.ajax({
+                    url:"txt.html",
+                    success:function(result){
+                            $('.classdiv').html(result);
+                }
+            });
+            });
+           });
+        </script>
+    </head>
+    <body>
+        <h1>ajax get</h1>
+        <div class="classdiv"> </div>
+        <button class="btn">click here</button>
+    </body>
+</html>

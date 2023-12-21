@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>change list items using jquery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('#addbtn').on('click',function(e){
+                    e.preventDefault();
+                    let val = $('#inputsend').val();
+                    let option = $('<option>',{value:val,text:val});
+                    $('#selectid').append(option);
+                    $('#selectid').val(val);
+
+                });
+            
+            $('#removebtn').on('click',function(e){
+                    e.preventDefault();
+                    let val = $('#inputsend').val();
+                    let option = $('#selectid option:contains('+val+')')
+                    if(option>0)
+                    {
+                        $('#selectid option:selected').remove();
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form id="fromss">
+            
+            <input type="text" id="inputsend"><br>
+            <button type="submit" id="addbtn">add items</button>
+            <button type="submit" id="removebtn">remove items</button>
+            <br><br>
+            <select id="selectid" size="3">
+                <option></option>
+            </select>
+        </form>
+    </body>
+</html>

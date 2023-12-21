@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+              $(function(){
+                $('#form').submit(function(e){
+                    e.preventDefault()
+                    let first = $('#first').val();
+                    let last = $('#last').val();
+                    let p = $('<p>',{text:first+" "+last})
+                    $('#container').html(p);
+                })
+              })
+            </script>
+        
+    </head>
+    <body>
+      <form id="form">
+         <input type="text" placeholder="first name" id="first">
+         <input type="text" placeholder="last name" id="last"><br>
+
+         <button type="submit">click here</button><br><br>
+
+      </form>
+
+      <div id="container"></div>
+
+    </body>
+</html>

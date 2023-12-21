@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('div').on('click','p',function(){
+                $(this).remove();
+            })
+
+            $('#btn').on('click',function(){
+                let val=$('#listadd').val();
+                $('div').append('<p>'+val+'</p>');
+            })
+
+            $('#remove').on('click',function(){
+                let val=$('#listadd').val();
+                $('div p:contains('+val+')').remove();
+            })
+        })
+        
+    </script>
+</head>
+<body>
+    <input type="text" name="list" id="listadd">
+    <button id="btn">add</button><button id="remove">remove</button>
+    <div>
+        <p>this is first</p>
+        <p>this is second</p>
+        <p>this is third</p>
+    </div>
+</body>
+</html>

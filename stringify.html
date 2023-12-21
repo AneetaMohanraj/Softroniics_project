@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>stringify</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $.ajax({
+  url: "your_api_endpoint",
+  method: "GET",
+  success: function(data) {
+    // Handle successful response
+    console.log(data);
+  },
+  error: function(xhr, status, error) {
+    // Handle errors
+    console.log("Error: " + error);
+    console.log("Status: " + status);
+
+    // Access the XMLHttpRequest object (xhr) for more details
+    console.log(xhr);
+  }
+});
+        </script>
+    </head>
+    <body>
+        <h1>stringify file data</h1>
+
+    </body>
+</html>
+

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title></title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(function(){
+                    $('span img').on('click',function(){
+                        let url = $(this).attr('src');
+                        let img = $('<img>',{src:url})
+                        $('#container').html(img);
+                    })
+                    $('span img').on('mouseleave',function(){
+                        $('div img').remove();
+                    })
+                })
+            </script>
+        
+    </head>
+    <body>
+      <span><img src="flower1.jpg" width="100" height="100"></span>&nbsp;
+      <span><img src="flower2.jpg" width="100" height="100"></span>&nbsp;
+      <span><img src="flower3.jpg" width="100" height="100"></span>&nbsp;
+      <span><img src="flower4.jpg" width="100" height="100"></span>&nbsp;
+      <div id="container"></div>
+    </body>
+</html>

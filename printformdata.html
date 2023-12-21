@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('#forms').submit(function(event){
+                    event.preventDefault();
+                    let formdata=$(this).serialize();
+                    $('#div').html(formdata);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <form id="forms" action="" method="post">
+            <input type="text" name="name" placeholder="enter a name"><br>
+            <input type="text" name="age" placeholder="enter a age"><br>
+            <input type="submit" value="click here">
+        </form>
+        <div id="div"> </div>
+    </body>
+</html>

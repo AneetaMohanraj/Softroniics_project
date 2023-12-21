@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title></title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+            //   $(function(){
+            //     $('.h1class').on('click',function(){
+            //         let val = "text";
+            //         $(this).html(val);
+            //     });
+            
+            //   $('.h1class').on('dblclick',function(){
+            //         let val = "hello";
+            //         $(this).html(val);
+            //     });
+            //   });
+
+//   ---------------------------------------------------------------------------------other method---------------------------------------------------------------------------
+          
+            $(function(){
+                $('.h1class').on('click',function(){
+                    let val = $(this).html(val);
+                    if(val === 'hello'){
+                        $(this).html("text")
+                    }
+                    else if(val === 'text'){
+                        $(this).html("hello")
+                    }
+                    
+                });
+              });
+        
+            </script>
+        
+    </head>
+    <body>
+       <h1 class="h1class">hello</h1>
+    </body>
+</html>

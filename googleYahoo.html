@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Form</title>
+</head>
+<body>
+
+<form id="searchForm">
+  <label for="searchEngine">Select Search Engine:</label>
+  <select id="searchEngine" name="searchEngine">
+    <option value="google">Google</option>
+    <option value="yahoo">Yahoo</option>
+  </select>
+
+  <label for="searchQuery">Search Query:</label>
+  <input type="text" id="searchQuery" name="searchQuery">
+
+  <button type="submit">Search</button>
+</form>
+
+<script>
+$(function(){
+    $('#searchForm').submit(function(e){
+        e.preventDefault();
+        let search=$('#searchQuery').val();
+        let select=$('#searchEngine');
+        
+    })
+})
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    // Get selected search engine and search query
+    var searchEngine = document.getElementById('searchEngine').value;
+    var searchQuery = document.getElementById('searchQuery').value;
+  
+    // Redirect to the appropriate search engine's results page
+    if (searchEngine === 'google') {
+      window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(searchQuery);
+    } else if (searchEngine === 'yahoo') {
+      window.location.href = 'https://search.yahoo.com/search?p=' + encodeURIComponent(searchQuery);
+    }
+  }); -->

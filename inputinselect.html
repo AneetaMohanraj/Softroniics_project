@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>input to select option</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(function(){
+            $('#btnid').on('click',function(){
+                let val=$('#inputid').val();
+                let newselect = $('<option>',{value:val,text:val});
+                $('#selectid').append(newselect); 
+                $('#selectid').val(val);   
+            })
+        })
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="inputid">
+            <input type="button" value="click here" id="btnid"><br>
+            <select id="selectid" >
+                <option selected></option>
+            </select>
+        </form>
+    </body>
+</html>

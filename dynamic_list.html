@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $('#addid').on('click',function(e){
+                    e.preventDefault();
+                    let val = $('#inputid').val();
+                    let li = $('<li>',{text:val});
+                    $('#ulid').append(li);   
+                })
+                $('#removeid').on('click',function(e){
+                    e.preventDefault();
+                    let val = $('#inputid').val();
+                    $('#ulid li:contains('+val+')').remove();
+                })
+            })
+         
+        </script>
+    </head>
+    <body>
+        <form id="formid">
+            <input type="text" id="inputid"><button type="submit" id="addid"> add list items</button><button type="submit" id="removeid"> remove list items</button>
+        </form>
+        <ul id="ulid">
+            
+        </ul>
+    </body>
+</html>

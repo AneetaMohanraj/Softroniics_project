@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery :first-child Selector</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("p:first-of-type").css(
+				"background-color", "green"); //selects first child of type
+		
+        $("div :first-child").css(
+				"background-color", "green"); // selects first child
+            
+        $(".heading").add("#para1").add("#span1").
+                css({"background-color": "blue"});
+            });
+	</script>
+</head>
+
+<body>
+	<h1>
+		geeks
+	</h1>
+	<div >
+        <h4>hello</h4>
+		<p class="heading" style="color:white">Geeks for Geeks</p>
+		<p id="para1" style="color:yellow">jQuery</p>
+		<p id="span1" style="color:yellow">First Child Selector</p>
+	</div>
+</body>
+
+</html>

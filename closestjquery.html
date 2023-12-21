@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		.main * {
+			display: block;
+			border: 2px solid lightgrey;
+			color: grey;
+			padding: 5px;
+			margin: 15px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //jQuery code to perform this method
+            $("button").click(function () {
+                $("div p").wrap("<b/>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <!-- This paragraph will get bold after click on
+            the button -->
+        <p id="p1">Welcome to GeeksforGeeks !!!</p>
+    </div>
+    <!-- click on this button -->
+    <button>Click Me!</button>
+    <br>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+            color: white;
+        }
+        .blue{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       $(function(){
+        $('h3').hide();
+        $('h2').click(function(){
+            $(this).hide();
+            $('h3').show();
+        })
+        $('h3').click(function(){
+            $(this).hide();
+            $('h2').show();
+        })
+
+       })
+    </script>
+</head>
+<body> 
+    <h2 class="red">h2 heading content</h2>
+    <h3>h3 heading content</h3>
+</body>
+</html>
