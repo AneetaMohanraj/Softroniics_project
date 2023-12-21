@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>csv handling</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#csv').on('click',function(){
+                $.ajax({
+                    url:'zcsv.php',
+                    success:function(){
+                        alert("downloaded")
+                    },
+                    error:function(xhr,status,error){
+                        alert("error - "+status+" - "+error)
+                    }
+                })
+            })
+
+            $('#pdf').on('click',function(){
+                $.ajax({
+                    url:'zpdf.php',
+                    success:function(){
+                        alert("downloaded")
+                    },
+                    error:function(xhr,status,error){
+                        alert("error - "+status+" - "+error)
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    download table 
+    <button id="csv">download</button>
+    <br><br>
+    convert to pdf
+    <button id="pdf">PDF</button>
+</body>
+</html>
+
+
+<!-- 
+// $(function(){
+    //     $.ajax({
+    //         url:'admin_ViewOrders.php',
+    //         dataType:'json',
+    //         success:function(response){
+    //             let tr = ''
+    //             count = 0
+    //             for(i=0;i<response.length;i++){
+    //                 if(response[i].count === 1){
+    //                     tr += '<tr>'
+    //                     tr += '<td>'+response[i].username+'</td>'
+    //                     tr += '<td>'+response[i].Food+'</td>'
+    //                     tr += '<td>'+response[i].Quantity+'</td>'
+    //                     tr += '<td>'+response[i].TotalAmount+'</td>'
+    //                     tr += '<td><a class="orders" href="admin_UpdateSelectStatus.php?id='+response[i].orderid+'">'+response[i].Status+'</a></td>'
+    //                     tr += '</tr>'
+    //                 }
+    //                 else if(response[i].count > 1){
+    //                     count = count+1
+    //                     tr += '<tr>'
+    //                     if(count != response[i].count){
+    //                         continue;
+    //                     }
+    //                     else{
+    //                         tr += '<td>'+response[i].username+'</td>'
+    //                     }
+    //                     tr += '<td>'+response[i].Food+'</td>'
+    //                     tr += '<td>'+response[i].Quantity+'</td>'
+    //                     tr += '<td>'+response[i].TotalAmount+'</td>'
+    //                     if(count != response[i].count){
+    //                         continue;
+    //                     }
+    //                     else{
+    //                         tr += '<td><a class="orders" href="admin_UpdateSelectStatus.php?id='+response[i].orderid+'">'+response[i].Status+'</a></td>'
+    //                     }
+    //                 }
+                    
+    //             }
+    //             $('#dashboardTable').append(tr)
+    //         },
+    //         error:function(xhr,status,error){
+    //            alert("error : "+status+" - "+error)
+    //         }
+    //     })
+    // }) -->

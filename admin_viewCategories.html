@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>.img{height: 30px;width: 30px;}
+    .categoryimg{width: 10px; background-color: #e6a6a6;}</style>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(function(){
+        $.ajax({
+            url:'admin_viewCategories.php',
+            dataType:'json',
+            success:function(response){
+                let tr = '';
+                for(i=0;i<response.length;i++){
+                    tr += '<tr>'
+                        tr += '<td> <img src="photos/'+response[i].categoryimg+'" class="img"></td>'
+                        tr += '<td>'+response[i].category+'</td>'
+                        tr += '<td> <a href="admin_SelectUpdateCategory.php?id='+response[i].categoryid+'"> <button class="categoryimg">update</button></a><br><br><a href="admin_DeleteCategory.php?id='+response[i].categoryid+'"> <button class="categoryimg">Delete</button></a></td>'   
+                    tr += '</tr>'     
+                }
+                $('#dashboardTable').append(tr);
+            },
+            error:function(xhr,status,error){
+                alert("error : "+status+" - "+error)
+            }
+        })
+    })
+  </script>
+</head>
+<body>
+    <h5>Categories&nbsp;&nbsp; &nbsp; &nbsp;  <a href="admin_addCategories.html"><button>Add Categories</button> </a>     </h5>  
+  
+    <table id="dashboardTable">
+    <tr> 
+        <th>Image</th>
+        <th>Category</th>
+        <th></th>
+    </tr>
+
+   
+
+
+</table>
+</body>
+</html>

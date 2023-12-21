@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Categories</title> 
+  <link rel="icon" type="image/x-icon" href="photos/appleicon.png">
+  <link rel="stylesheet" href="registration.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  
+
+  <!-- PASSING FORM DATA TO addCategories.php -->
+
+  <script>
+   $(function(){
+    $('#image').on('change',function(){
+        let val = $('#image').val().split('\\').pop().split('/').pop()
+        $('#catimg').attr('src','photos/'+val)
+    })
+
+
+    $('#forms').on('submit',function(e){
+      e.preventDefault();
+      let image = $('#image').val().split('\\').pop().split('/').pop()
+      console.log(image);
+      let name = $('#name').val();
+      console.log(name);
+
+      $.ajax({
+        url:'admin_addCategories.php',
+        type:'post',
+        data:{
+          'image':image,
+          'name':name
+        },
+        dataType:'text',
+        success:function(response){
+          alert("Category Added")
+        },
+        error:function(xhr,status,error){
+          alert("error : "+status+" "+error);
+        }
+      })
+    })
+   })
+  </script>
+</head>
+<body>
+  <div class="registration-form">
+    <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;"><font size="6">Add Category</font></h2>
+    <form action=" " method="post" id="forms">
+
+      <div class="form-group">
+        <img src="" id="catimg" height="100px" width="100px"><br>
+      </div>
+
+      <div class="form-group">
+        <input type="file" id="image" name="foodimg" placeholder="Insert an image" class="inputimg" required style="background-image: url('photos/gallery.png');" ><br>
+      </div>
+
+      <div class="form-group">
+        <br>
+        <input type="text" id="name" name="name"  placeholder="Category" class="inputimg" required style="background-image: url('photos/app.png');"><br>
+      </div>
+
+      <div>
+        <br>
+      <a href=""><input type="submit" value="Add Category" class="buttonstyle"></a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

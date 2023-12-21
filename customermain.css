@@ -1,0 +1,253 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  #dashboard {
+    display: flex;
+    background-color: #f4f4f4;
+  }
+
+  #sidebar {
+    width: 200px;
+    height: 730px;
+    background-color: #ffffff;
+    color: #fab9b9;
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 18px;
+    border: 1px solid #e6a6a6ad;
+ 
+  }
+
+  #content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  #content h2 {
+    color: #333;
+  }
+
+  .menu-item {
+    cursor: pointer;
+    padding: 18px;
+    margin-bottom: 10px;
+    color: #383737;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 17px;
+  }
+
+  .menu-item:hover {
+    background-color: #e6a6a6;
+    color: white;
+    
+  }
+
+
+   
+  .menu-item:hover a{
+    color: white;
+  }
+
+  #topbar{
+    display: block;
+  }
+
+  #maincontainer{
+    width: 1000px;
+    background-color: #f4f4f4;
+  }
+
+  #sidecontainer{
+    width: 300px;
+    background-color: #f4f4f4;
+    
+    
+  }
+  #insideside{
+     background-color: white;
+     position: relative;
+     border-radius: 30px;
+     padding: 10px;
+     height: 750px;
+     margin-top: 10px;
+     margin-right: 18px;
+     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+     border: 1px solid #e6a6a6ad;
+
+  }
+
+  #insideContainerTable{
+    border-collapse: collapse;
+    width: 260px;
+  }
+  #insideContainerTable tr:hover{
+    background-color: #f3d9e2;
+  }
+
+
+  #insideContainerTable th{
+    color: #fa6e9d;
+    padding: 10px;
+  }
+
+  #insideContainerTable td{
+    padding: 10px;
+  }
+
+  #insideContainerTotal{
+    position: absolute;
+    bottom:0%;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #ecd1da;
+  }
+
+
+
+  #changecontent{
+    background-color: #f4f4f4;
+    position: relative;
+    box-shadow: inset;
+    padding: 20px;
+    margin: 15px;
+    height: 410px;
+    width: 930px;
+    overflow: auto;
+    border-radius: 15px;
+  }
+
+
+  #contentbox{
+    height:190px;
+    width: 930px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    background-image: url('photos/back6.jpg');
+    background-position:38% 65%;
+    background-size: auto;
+    
+    box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    
+  }
+
+  #dashboardTable{
+    width: 900px;
+    height: 100px;
+    text-align: center;
+    border: none;
+    border-collapse: collapse;
+    border-radius: 15px;
+    
+  }
+
+
+  #dashboardTable th{
+    background-color: #e6a6a6;
+    border-spacing: 10px;
+    padding: 15px;
+    color: white;
+   
+  }
+
+  #dashboardTable td{
+    border-spacing: 10px;
+    padding: 15px;
+  }
+
+  #dashboardTable tr:hover{
+    background-color: rgba(238, 142, 142, 0.315)
+  }
+
+
+  #usercontent{
+    background-color: white;
+    position: relative;
+  }
+  #categorydiv{
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  #categorydiv div{
+    background-color: white;
+    border-radius: 15px;
+    height: 50px;
+    width: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    padding:20px;
+  }
+
+  #categorydiv div:hover{
+    background-color: rgb(248, 228, 235);
+  }
+
+  #fooddiv{
+    display: flex;
+    flex-direction: row;
+    overflow-y: auto;
+  }
+
+  #fooddiv div{
+    background-color: white;
+    padding: 20px;
+    height: 150px;
+    width: 120px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}

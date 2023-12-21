@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- STYLE FOR FOOD IMAGE -->
+    <!-- <style> .foodimage{ height: 30px;width: 30px;} </style>  -->
+    
+    <!-- JQUERY CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- AJAX REQUEST TO GET THE FOOD DETAILS -->
+    <script>
+        $(function(){
+            $.ajax({
+                url:'admin_viewFood.php',
+                dataType:'json',
+                success:function(response){
+                    let tr = '';
+                
+                    for(i=0;i<response.length;i++){
+                        tr += '<tr>'
+                        tr += '<td>'+response[i].category+'</td>'
+                        tr += '<td><img src="photos/'+response[i].foodimage+'" class="foodimage" style="height: 30px;width: 30px;"></td>'   
+                        tr += '<td>'+response[i].foodname+'</td>'
+                        tr += '<td>'+response[i].price+'</td>'
+                        tr += '<td><a href="admin_SelectedFood.php?id='+response[i].foodid+'"><button>Update</button></a><br><br><a href="admin_DeletedFood.php?id='+response[i].foodid+'"><button>Delete</button></a>'
+                        tr += '</tr>'    
+                    }
+                    $('#dashboardTable').append(tr);
+                },
+                error:function(xhr,status,error){
+                    alert("error - "+status+" - "+error);
+                }
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <h5>Food Items &nbsp;&nbsp; &nbsp; &nbsp;<a href="admin_additems.php"><button style="background-color: #e6a6a6;width:200px;height: 30px;color: white;border-radius: 30px;">Add items</button></a>  </h5>
+    <table id="dashboardTable">
+    <tr>
+        <th>Category</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+        
+    </tr>
+
+</table>
+</body>
+</html>

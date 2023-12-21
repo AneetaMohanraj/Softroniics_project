@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Feedback</title>
+    <link rel="icon" type="image/x-icon" href="photos/appleicon.png">
+    <link rel="stylesheet" href="registration.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+          $('#forms').on('submit',function(e){
+             e.preventDefault();
+             let feed = $('#feed').val()
+             console.log(feed);
+
+
+             $.ajax({
+                url:'customer_addFeedback.php',
+                type:'post',
+                data:{
+                    'feedback':feed
+                },
+                success:function(){
+                    alert("Feedback send");
+                },
+                error:function(xhr,status,error){
+                    alert("Error : "+status+" - "+error)
+                }
+            })
+          })
+        })
+    </script>
+</head>
+<body>
+    <div class="registration-form">
+        <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;"><font size="6">Give Feedbacks</font></h2>
+        <form action=" " method="post" id="forms">
+
+          <div class="form-group">
+            <br>
+            <input type="text" id="feed" name="feed"  placeholder="Write your Feedback Here" class="inputimg" required style="background-image: url('photos/app.png');"><br>
+          </div>
+    
+          <div>
+            <br>
+          <input type="submit" value="Send Feedback" class="buttonstyle">
+          </div>
+        </form>
+      </div>
+</body>
+</html>

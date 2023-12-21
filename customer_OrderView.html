@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+    <link rel="icon" type="image/x-icon" href="photos/appleicon.png">
+    <link rel="stylesheet" href="registration.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $.ajax({
+          url:'customer_OrderView.php',
+          dataType:'json',
+          success:function(response){
+            // alert(response.foodimg)
+            let src = response.foodimg
+            let name = response.foodname
+            let id = response.foodid
+            let price = response.foodprice
+
+            $('img').attr('src','photos/'+src)
+            $('img').attr('id',id)
+            $('#foodname').html(name)
+            $('#foodprice').html(price)
+          },
+          error:function(xhr,status,error){
+             alert("error : "+status+" - "+error)
+          }
+        })
+
+
+
+        $('#orders').submit(function(e){
+          e.preventDefault()
+
+          let id = $('img').attr('id')
+          // console.log(id);
+          let qty = $('#qty').val()
+          // console.log(qty);
+
+          $.ajax({
+            url:'customer_OrderSend.php',
+            type:'post',
+            data:{
+              'foodid':id,
+              'quantity':qty
+            },
+            success:function(response){
+              alert("Order placed Successfully")
+            },
+            error:function(xhr,status,error){
+              alert("Error : "+status+" - "+error)
+            }
+          })
+
+        })
+      })
+    </script>
+
+</head>
+<body>
+    <div class="registration-form">
+        <h2 style="text-align: center;color:#e6a6a6;font-size: 35px;font-family: Ephesis;">Order Food</h2>
+        <form action=" " method="post" id="orders">
+          <div>
+            <img src="" alt="food img" height="100px" width="100px" id="">
+          </div>
+          <div>
+            <label id="foodname"></label>
+          </div>
+          <div>
+            <label id="foodprice"></label>
+          </div>
+          <div>
+            <input type="number" value="1" id="qty" name="qty" style="text-align: center;" placeholder="Enter quantity" required>
+          </div>
+          <br>
+          <div>
+          <input type="submit" value="Order" class="buttonstyle" id="feedbackbtn">
+          </div>
+        </form>
+      </div>
+</body>
+</html>
+
+

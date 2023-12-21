@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedbacks</title>
+    <style>a{text-decoration: none;color: black;}</style>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $.ajax({
+        url:'admin_viewFeedbacks.php',
+        dataType:'json',
+        success:function(response){
+          let tr =''
+
+          for(i=0;i<response.length;i++){
+            tr += '<tr>'
+              tr += '<td>'+response[i].username+'</td>'
+              tr += '<td>'+response[i].date+'</td>'
+              tr += '<td>'+response[i].feedback+'</td>'
+              tr += '<td class="reply"> <a href="admin_FeedbackReply.php?id='+response[i].feedid+'">'+response[i].reply+'</td>'
+          }
+          $('#dashboardTable').append(tr);
+        },
+        error:function(xhr,status,error){
+          alert("error - "+status+" - "+error)
+        }
+      })
+    })
+  </script>
+
+</head>
+<body>
+    <h5>Feedbacks from users</h5>    
+    <table id="dashboardTable">
+    <tr>
+        <th>User Name</th>
+        <th>Feedback Date</th>
+        <th>Feedback</th>
+        <th>Reply</th>
+    </tr>
+
+
+</table>
+</body>
+</html>

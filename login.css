@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Ephesis&family=Inconsolata&family=Playfair+Display&family=Roboto+Mono:wght@200&family=Source+Code+Pro:ital,wght@0,200;1,200&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #333;
+}
+
+.login-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #302f2f;
+  font-family: Arial, sans-serif;
+}
+
+.form-group input {
+  width: 300px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  background-position: 95%;
+  background-repeat: no-repeat;
+  background-size: 8%;
+  
+}
+
+.form-group input:hover{
+  background-color: #f8dede;
+  color: #333;
+}
+
+.buttonstyle {
+  background-color: #e6a6a6;
+  color: #fff;
+  padding: 10spx;
+  border: none;
+  border-radius: 4px;
+  
+}
+
+.buttonstyle:hover{
+  background-color: #f58585;
+  color: white;
+}
+
